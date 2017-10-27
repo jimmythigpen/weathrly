@@ -1,0 +1,23 @@
+{
+  "name": "weathrly",
+  "private": true,
+  "scripts": {
+    "start": "meteor run --settings settings.json"
+  },
+  "dependencies": {
+    "apollo-client": "1.9.1",
+    "apollo-server-express": "^1.2.0",
+    "babel-runtime": "^6.20.0",
+    "body-parser": "^1.18.2",
+    "dom": "0.0.3",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "material-ui": "^0.19.4",
+    "meteor-node-stubs": "~0.2.4",
+    "moment": "^2.19.1",
+    "react": "^16.0.0",
+    "react-apollo": "^2.0.0",
+    "react-dom": "^16.0.0",
+    "react-tap-event-plugin": "^3.0.2"
+  }
+}
