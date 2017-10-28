@@ -1,5 +1,4 @@
 import { WunderAPI } from './connectors';
-import _ from 'lodash';
 
 export const resolvers = {
   Query: {
@@ -11,10 +10,10 @@ export const resolvers = {
     },
     async getForecast(root, { location }, context) {
       return await WunderAPI.getForecast(location);
-    }
+    },
   },
   Result: {
     name: ({ name }) => name,
     resultString: ({ l }) => l,
-  }
+  },
 };

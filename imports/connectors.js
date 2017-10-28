@@ -6,7 +6,7 @@ const WunderAPI = {
     const options = {
        uri: 'http://autocomplete.wunderground.com/aq',
        qs: {
-         'query': searchText
+         'query': searchText,
        },
        json: true
      };
@@ -22,7 +22,7 @@ const WunderAPI = {
 
   async getConditions(location) {
     const options = {
-       uri: `http://api.wunderground.com/api/${WUNDERGROUND_KEY}/conditions/q/${location}.json`,
+       uri: `http://api.wunderground.com/api/${WUNDERGROUND_KEY}/conditions/${location}.json`,
        json: true
      };
       
@@ -32,8 +32,8 @@ const WunderAPI = {
         return {
           cityName: current_observation.display_location.city,
           currentDay: current_observation.local_epoch,
-          currentTemp: current_observation.temperature_string
-        }
+          currentTemp: current_observation.temp_f,
+        };
        })
        .catch(function (err) {
          console.log('getConditions err: ', err);
@@ -41,7 +41,7 @@ const WunderAPI = {
   },
   async getForecast(location) {
     const options = {
-       uri: `http://api.wunderground.com/api/${WUNDERGROUND_KEY}/forecast/q/${location}.json`,
+       uri: `http://api.wunderground.com/api/${WUNDERGROUND_KEY}/forecast/${location}.json`,
        json: true
      };
       
@@ -54,13 +54,13 @@ const WunderAPI = {
           expectedLow: currentSimpleForecast.low.fahrenheit,
           expectedHigh: currentSimpleForecast.high.fahrenheit,
           summary: currentTextForecast.fcttext,
-          icon: currentTextForecast.icon_url
-        }
+          icon: currentTextForecast.icon_url,
+        };
        })
        .catch(function (err) {
          console.log('getForecast err: ', err);
        });
-  }
-}
+  },
+};
 
 export { WunderAPI };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
-import { gql, graphql, compose, withApollo } from 'react-apollo';
+import { withApollo } from 'react-apollo';
 import { getLocations } from '../graphql/queries';
 
 class Search extends Component {
@@ -8,8 +8,8 @@ class Search extends Component {
     super(props);
 
     this.state = {
-      searchResults: []
-    }
+      searchResults: [],
+    };
   }
 
   fetchLocations(searchText) {
@@ -18,7 +18,7 @@ class Search extends Component {
     this.props.client.query({
       query: getLocations,
       variables: {
-        searchText
+        searchText,
       },
       fetchPolicy: 'network-only'
     }).then(({ data: { getLocations }}) => {
@@ -29,13 +29,13 @@ class Search extends Component {
   render() {
     return (
       <div>
-        Search Component
         <AutoComplete
+          autoFocus
           hintText='Search Locations'
           onUpdateInput={_.debounce((searchText) => this.fetchLocations(searchText), 300)}
           onNewRequest={(chosenRequest, index) => {
             localStorage.setItem('weathrly_location', chosenRequest.resultString);
-            this.props.setLocation(chosenRequest.resultString)
+            this.props.setLocation(chosenRequest.resultString);
           }}
           dataSource={this.state.searchResults}
           dataSourceConfig={{
@@ -46,10 +46,12 @@ class Search extends Component {
           maxSearchResults={5}
           floatingLabelText="Search Locations"
           fullWidth
-        /><br />
+        />
+        <br />
+        <br />
       </div>
-    )
+    );
   }
 }
 
-export default withApollo(Search)
+export default withApollo(Search);

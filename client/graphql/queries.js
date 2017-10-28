@@ -25,4 +25,4 @@ const currentWeather = gql`
   }
 `;
 
-export { getLocations, currentWeather }
+export { getLocations, currentWeather };

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Welcome from './Welcome';
 import CurrentWeather from './CurrentWeather';
-import _ from 'lodash';
+import Search from './Search';
+import AppBar from 'material-ui/AppBar';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      location: localStorage.getItem('weathrly_location') || ''
-    }
+      location: localStorage.getItem('weathrly_location') || '',
+    };
 
     this.setLocation = this.setLocation.bind(this);
   }
@@ -21,11 +22,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Weathrly</h1>
-        <Welcome setLocation={this.setLocation} />
-        <CurrentWeather location={this.state.location} />
+        <AppBar
+          showMenuIconButton={false}
+          title="Weathrly"
+        />
+        <div className='app-container'>
+          <Welcome setLocation={this.setLocation} />
+          <CurrentWeather location={this.state.location} />
+        </div>
       </div>
-    )
+    );
   }
 }
 

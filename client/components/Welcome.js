@@ -1,13 +1,11 @@
 import React from 'react';
-import Search from './Search'
+import Search from './Search';
 
 const Welcome = ({ setLocation }) => (
   <div>
-    Welcome to Weathrly
-    <br/>
-    <br/>
+    <h2>Welcome, find some weather!</h2>
     <Search setLocation={setLocation} />
   </div>
-)
+);
 
-export default Welcome
+export default Welcome;

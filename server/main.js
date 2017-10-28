@@ -1,6 +1,6 @@
-import { createApolloServer } from 'meteor/apollo'
-import { schema } from '/imports/schema'
+import { createApolloServer } from 'meteor/apollo';
+import { schema } from '/imports/schema';
 
 createApolloServer({
-  schema
+  schema,
 });
