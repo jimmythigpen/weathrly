@@ -23,7 +23,7 @@ Meteor.startup(() => {
   render(
     <ApolloProvider client={client}>
       <MuiThemeProvider muiTheme={muiTheme}>
-          <App />
+        <App />
       </MuiThemeProvider>
     </ApolloProvider>,
     document.getElementById('app')

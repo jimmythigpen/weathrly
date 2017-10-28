@@ -39,7 +39,7 @@ class CurrentWeatherComponent extends Component {
             <img className='weather-info' src={icon} />
           </div>
           <Divider />
-          <div className='forecast-header'>Today's Forecast</div>
+          <div className='forecast-header'>Today&apos;s Forecast</div>
           <div className='weather-info temp'>Low: {expectedLow}&#8457;</div>
           <div className='weather-info temp'>High: {expectedHigh}&#8457;</div>
           <div>{summary}</div>
