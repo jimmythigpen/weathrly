@@ -1,5 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import { createApolloServer } from 'meteor/apollo'
+import { schema } from '/imports/schema'
 
-Meteor.startup(() => {
-  // code to run on server at startup
+createApolloServer({
+  schema
 });
