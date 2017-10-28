@@ -33,6 +33,7 @@ const WunderAPI = {
           cityName: current_observation.display_location.city,
           currentDay: current_observation.local_epoch,
           currentTemp: current_observation.temp_f,
+          icon: current_observation.icon_url,
         };
        })
        .catch(function (err) {
@@ -54,7 +55,6 @@ const WunderAPI = {
           expectedLow: currentSimpleForecast.low.fahrenheit,
           expectedHigh: currentSimpleForecast.high.fahrenheit,
           summary: currentTextForecast.fcttext,
-          icon: currentTextForecast.icon_url,
         };
        })
        .catch(function (err) {

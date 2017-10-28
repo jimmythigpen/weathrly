@@ -15,12 +15,12 @@ const currentWeather = gql`
       cityName
       currentDay
       currentTemp
+      icon
     }
     getForecast(location: $location) {
       expectedLow
       expectedHigh
       summary
-      icon
     }
   }
 `;

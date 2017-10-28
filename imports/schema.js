@@ -11,13 +11,13 @@ const typeDefs = [`
     cityName: String
     currentDay: String
     currentTemp: String
+    icon: String
   }
 
   type Forecast {
     expectedLow: String
     expectedHigh: String
     summary: String
-    icon: String
   }
 
   type Query {

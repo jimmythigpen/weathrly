@@ -19,12 +19,12 @@ class CurrentWeatherComponent extends Component {
           cityName,
           currentDay,
           currentTemp,
+          icon,
         },
         getForecast: {
           expectedLow,
           expectedHigh,
           summary,
-          icon,
         },
       },
     } = this.props;
