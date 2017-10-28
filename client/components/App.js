@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Welcome from './Welcome';
 import CurrentWeather from './CurrentWeather';
-import Search from './Search';
 import AppBar from 'material-ui/AppBar';
 
 class App extends Component {
