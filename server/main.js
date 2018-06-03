@@ -4,5 +4,6 @@ import { schema } from '/imports/schema';
 createApolloServer({
   schema,
 }, {
-  graphiql: true
+  graphiql: true,
+  configServer: expressServer => expressServer.use(cors())
 });
