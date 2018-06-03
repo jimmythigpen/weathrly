@@ -3,4 +3,6 @@ import { schema } from '/imports/schema';
 
 createApolloServer({
   schema,
+}, {
+  graphiql: true
 });
